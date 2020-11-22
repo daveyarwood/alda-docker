@@ -3,5 +3,5 @@ LABEL maintainer="dave.yarwood@gmail.com"
 
 USER root
 
-RUN yum -y install tar gzip git
+RUN yum -y install tar gzip git which
 
