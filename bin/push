@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+if [[ $# -ne 1 ]]; then
+  echo "Usage:"
+  echo "  $(basename "$0") SERVICE_NAME"
+  echo
+  echo "Example:"
+  echo "  $(basename "$0") releases-api"
+  exit 1
+fi
+
+service_name="$1"
+image_name="alda-$service_name"
+image_dir="$(dirname "$0")/../$service_name"
+tag="latest"
+artifact_name="daveyarwood/$image_name"
+
+docker build -t "$image_name:$tag" "$image_dir"
+docker tag "$image_name:$tag" "$artifact_name:$tag"
+docker push "$artifact_name:$tag"
