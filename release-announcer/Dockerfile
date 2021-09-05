@@ -1,4 +1,4 @@
-FROM circleci/buildpack-deps:bionic
+FROM cimg/base:2021.07
 LABEL maintainer="dave.yarwood@gmail.com"
 
 USER root
