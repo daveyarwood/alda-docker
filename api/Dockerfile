@@ -3,18 +3,14 @@ LABEL maintainer="dave.yarwood@gmail.com"
 
 USER root
 
-# Install Datadog agent using the step-by-step Debian instructions here:
+# Install Datadog agent using the instructions here (but without exposing the
+# API key here):
 #
 # https://app.datadoghq.com/signup/agent#debian
 #
 # NOTE: For security reasons, configuration of the Datadog agent is done at
 # runtime.
-RUN apt-get update
-RUN apt-get install apt-transport-https
-RUN echo 'deb https://apt.datadoghq.com/ stable 7' \
-  > /etc/apt/sources.list.d/datadog.list
-RUN apt-key adv --recv-keys \
-  --keyserver hkp://keyserver.ubuntu.com:80 \
-  A2923DFF56EDA6E76E55E492D3A80E30382E94DE
-RUN apt-get update
-RUN apt-get install datadog-agent
+RUN DD_AGENT_MAJOR_VERSION=7 \
+  DD_API_KEY="placeholder" \
+  bash \
+  -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script.sh)"
