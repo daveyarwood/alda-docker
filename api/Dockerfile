@@ -3,6 +3,8 @@ LABEL maintainer="dave.yarwood@gmail.com"
 
 USER root
 
+RUN apt update && apt install -y curl
+
 # Install Datadog agent using the instructions here (but without exposing the
 # API key here):
 #
