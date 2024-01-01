@@ -5,7 +5,7 @@ if [[ $# -ne 1 ]]; then
   echo "  $(basename "$0") SERVICE_NAME"
   echo
   echo "Example:"
-  echo "  $(basename "$0") releases-api"
+  echo "  $(basename "$0") api"
   exit 1
 fi
 
