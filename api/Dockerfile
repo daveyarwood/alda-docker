@@ -1,4 +1,4 @@
-FROM clojure:openjdk-11-tools-deps-1.10.1.739
+FROM clojure:openjdk-17-tools-deps-1.11.1.1113
 LABEL maintainer="dave.yarwood@gmail.com"
 
 USER root
