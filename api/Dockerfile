@@ -15,4 +15,4 @@ RUN apt update && apt install -y curl
 RUN DD_AGENT_MAJOR_VERSION=7 \
   DD_API_KEY="placeholder" \
   bash \
-  -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script.sh)"
+  -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)"
